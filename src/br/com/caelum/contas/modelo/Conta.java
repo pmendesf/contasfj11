@@ -6,7 +6,7 @@ package br.com.caelum.contas.modelo;
  * @author Patrick
  *
  */
-public class Conta {
+public abstract class Conta {
 	private Cliente titular;
 	private int numero;
 	private String agencia;
@@ -109,6 +109,12 @@ public class Conta {
 		}
 	}
 
+	/**
+	 * Método que transfere um valor para a conta de destino
+	 *
+	 * @param valor
+	 * @param conta
+	 */
 	public void transfere(double valor, Conta conta) {
 		this.saca(valor);
 		conta.deposita(valor);
@@ -139,8 +145,6 @@ public class Conta {
 		return dados;
 	}
 
-	public Object getTipo() {
-		return "Conta";
-	}
+	public abstract String getTipo();
 
 }
