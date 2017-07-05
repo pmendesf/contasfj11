@@ -11,7 +11,7 @@ public class Conta {
 	private int numero;
 	private String agencia;
 	private Data dataDeAbertura;
-	private double saldo;
+	protected double saldo;
 	private double limite = 1000;
 	private static int identificador = 0;
 
@@ -109,6 +109,11 @@ public class Conta {
 		}
 	}
 
+	public void transfere(double valor, Conta conta) {
+		this.saca(valor);
+		conta.deposita(valor);
+	}
+
 	/**
 	 * Método que retorna o rendimento atual da Conta
 	 *
@@ -132,6 +137,10 @@ public class Conta {
 		dados += "Saldo: " + this.saldo + "\n";
 		dados += "Limite: " + this.limite + "\n";
 		return dados;
+	}
+
+	public Object getTipo() {
+		return "Conta";
 	}
 
 }
