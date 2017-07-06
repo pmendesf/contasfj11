@@ -2,9 +2,9 @@ package br.com.caelum.contas.main;
 
 import br.com.caelum.javafx.api.main.SistemaBancario;
 
-public class TeladeContas {
+public class TelaDeContas {
 	public static void main(String[] args) {
-		SistemaBancario.mostraTela(false);
+		SistemaBancario.mostraTela(true);
 		// TelaDeContas.main(args);
 	}
 }

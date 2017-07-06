@@ -90,7 +90,7 @@ public abstract class Conta {
 	 * @return
 	 */
 	public boolean saca(double valor) {
-		if (valor > this.saldo || valor < 0) {
+		if (valor > this.saldo || valor <= 0) {
 			return false;
 		} else {
 			this.saldo -= valor;
