@@ -89,13 +89,14 @@ public abstract class Conta {
 	 * @param valor
 	 * @return
 	 */
-	public boolean saca(double valor) {
-		if (valor > this.saldo || valor <= 0) {
-			return false;
-		} else {
-			this.saldo -= valor;
-			return true;
+	public void saca(double valor) {
+		if (valor < 0) {
+			throw new IllegalArgumentException("Você tentou sacar um valor negativo");
 		}
+		if (this.saldo < valor) {
+			throw new SaldoInsuficienteException(valor);
+		}
+		this.saldo -= valor;
 	}
 
 	/**

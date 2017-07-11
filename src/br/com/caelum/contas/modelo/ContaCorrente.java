@@ -7,13 +7,8 @@ public class ContaCorrente extends Conta implements Tributavel {
 	}
 
 	@Override
-	public boolean saca(double valor) {
-		if (valor > (this.saldo - 0.10) || valor <= 0) {
-			return false;
-		} else {
-			this.saldo -= (valor + 0.10);
-			return true;
-		}
+	public void saca(double valor) {
+		super.saca(valor + 0.10);
 	}
 
 	@Override
